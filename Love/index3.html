@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalbimin Sayfası</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            position: relative;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.6);
+            transition: filter 1s ease-in-out;
+            cursor: pointer;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 700px;
+            margin: auto;
+            margin-top: 10%;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 2s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: slideIn 1s ease-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            animation: fadeIn 2.5s ease-out;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .controls {
+            margin-top: 30px;
+            animation: fadeIn 3s ease-out;
+        }
+
+        .volume-slider {
+            width: 300px;
+            margin-top: 10px;
+            height: 8px;
+            background: #ff1493;
+            border-radius: 10px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .music-btn {
+            background-color: #ff1493;
+            border-radius: 50%;
+            padding: 20px 25px;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .music-btn:hover {
+            transform: scale(1.2);
+            background-color: #ff69b4;
+        }
+
+        video:focus {
+            filter: brightness(0.8);
+        }
+
+        .letter {
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 30px;
+            max-width: 600px;
+            margin: auto;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: #fff;
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body>
+    <video autoplay loop muted onclick="showLetter()">
+        <source src="4603812-hd_1080_1920_30fps.mp4" type="video/webm">
+        Tarayıcınız video desteği sunmuyor.
+    </video>
+
+    <div class="container">
+        <h1>❤️ Sadece Senin İçin ❤️</h1>
+        <p id="message">Hayatımı güzelleştirdiğin için sana minnettarım. Bu sayfa, sana olan sevgimi göstermek için yaptığım bir sürpriz.</p>
+        <a href="index.html" class="btn">Başlangıç Sayfasına Dön</a>
+        <a href="index4.html"class="btn">Sonraki Aşk</a>
+        
+
+        <div class="controls">
+            <button id="toggle-music" class="music-btn">🎶</button>
+            <input id="volume-slider" type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.4">
+        </div>
+    </div>
+
+    <div class="letter" id="letter">
+        <p>Sevgilim,</p>
+        <p>Seninle her şey daha güzel. Her anımız, birlikte geçirdiğimiz her saniye benim için çok değerli. Gözlerinde kaybolduğum anları unutamam. Aşkımız, her geçen gün büyüyor ve ben de seni daha çok seviyorum.</p>
+        <p>Sonsuza kadar seninle olmak istiyorum. Kalbimde her zaman senin yerin var.</p>
+        <p>Seninle birlikte her şey çok daha parlak. Hep yanımda ol lütfen.</p>
+        <p>Sevgiyle,</p>
+        <p>Ben</p>
+    </div>
+
+    <footer>© 2024 Sevgiyle Tasarlandı.</footer>
+
+    <audio id="background-music" loop>
+        <source src="aşık.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById("background-music");
+        const toggleButton = document.getElementById("toggle-music");
+        const volumeSlider = document.getElementById("volume-slider");
+        const messageElement = document.getElementById("message");
+
+        let isPlaying = false;
+        let messageIndex = 0;
+        const messages = [
+            "Hayatımı güzelleştirdiğin için sana minnettarım. Bu sayfa, sana olan sevgimi göstermek için yaptığım bir sürpriz.",
+            "Seninle her şey daha güzel, her anımız değerli.",
+            "Gözlerinde kaybolduğum her anı unutamam. Hep yanımda ol lütfen.",
+            "Aşkımızın her anı kalbimde sonsuza dek yaşayacak.",
+            "."
+        ];
+
+        toggleButton.addEventListener("click", () => {
+            if (isPlaying) {
+                audio.pause();
+                toggleButton.textContent = "🎶";
+            } else {
+                audio.play();
+                toggleButton.textContent = "❌";
+            }
+            isPlaying = !isPlaying;
+        });
+
+        volumeSlider.addEventListener("input", (e) => {
+            audio.volume = e.target.value;
+        });
+
+        audio.volume = 0.4;
+
+        setInterval(() => {
+            messageElement.textContent = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length;
+        }, 4000); 
+
+   
+        function showLetter() {
+            const letter = document.getElementById("letter");
+            letter.style.display = "block";
+        }
+    </script>
+</body>
+</html>

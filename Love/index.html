@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgilim İçin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <!-- Ortada bulunan Hoşgeldin yazısı -->
+        <header>
+            <h1 class="header-3d">🖤 Hoşgeldin! 🖤</h1>
+        </header>
+
+        <!-- Pin Ekranı -->
+        <div class="pin-screen centered">
+            <h2>Pin Kodunu Giriniz</h2>
+            <input type="password" id="pin-code" placeholder="Pin Kodu">
+            <button onclick="checkPin()">Gönder</button>
+            <p id="error-message" style="color: red; display: none;">Yanlış pin kodu!</p>
+        </div>
+    </div>
+ 
+    <div style="position: fixed; top: 50%; left: 50%; width: 50%; height: 50%; background: url('image.png') no-repeat center center; background-size: cover; z-index: -1; transform: translate(-50%, -50%);"></div>
+   
+<footer>
+        <p>© 2024 Sevgilim için özel bir site.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

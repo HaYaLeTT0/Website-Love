@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgilim İçin</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+        header, footer {
+            background-color: #ff6f61;
+            color: white;
+            padding: 20px;
+            font-size: 2.5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            padding: 20px;
+        }
+        .love-letter, .quote, .lyrics {
+            background: #fff5e1;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 700px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.2em;
+        }
+        .music-player {
+            margin: 20px;
+        }
+        .falling-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .falling-hearts span {
+            position: absolute;
+            top: -10px;
+            color: red;
+            font-size: 24px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        .falling-hearts span:nth-child(odd) {
+            animation-duration: 4s;
+            left: calc(100% * 0.1);
+        }
+        .falling-hearts span:nth-child(even) {
+            animation-duration: 6s;
+            left: calc(100% * 0.9);
+        }
+        .heart-shape {
+            color: #ff6f61;
+            font-size: 100px;
+            margin: 40px 0;
+            position: relative;
+            display: inline-block;
+        }
+        .heart-shape::before, .heart-shape::after {
+            content: "❤️";
+            font-size: 100px;
+            position: absolute;
+        }
+        .heart-shape::before {
+            left: -60px;
+            top: -30px;
+        }
+        .heart-shape::after {
+            right: -60px;
+            top: -30px;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .image-gallery img {
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>❤️ Sevgilim İçin ❤️</header>
+    <div class="content">
+        <div class="heart-shape">❤️</div>
+        <div class="love-letter">
+            <h2>Mektubum</h2>
+            <p>Sevgilim, hayatımın en güzel anlarını seninle yaşıyorum. Seninle her an bir macera ve her gülüşünle hayat anlam buluyor. Seni çok seviyorum! ❤️</p>
+        </div>
+        <div class="quote" id="dynamic-quote">"Aşk bir kelime değil, bir his... ❤️"</div>
+        <div class="music-player">
+            <audio controls autoplay loop>
+                <source src="aşk.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="image-gallery">
+            <img src="ÖREN.jpg" alt="Image 1">
+            <img src="https://via.placeholder.com/200" alt="Image 2">
+            <img src="https://via.placeholder.com/200" alt="Image 3">
+            <img src="https://via.placeholder.com/200" alt="Image 4">
+        </div>
+        <div class="lyrics">
+            <h2>Şarkı Sözleri</h2>
+            <p>Her uzaklık çok zor<br>
+            İçimde kötü ihtimaller perisi<br>
+            Pul pul dökülmüş canım<br>
+            Yanar yanar da ısıtmaz beni</p>
+
+            <p>Durmaz yağar üzerime<br>
+            Kötü anılarım<br>
+            Susar bak kanar gülüşüne<br>
+            İçim içim, hayırsızım</p>
+
+            <p>Kapatın şehrin ışıklarını<br>
+            Günahı düşümde kalsın<br>
+            Göz görmez olsun<br>
+            Gönül katlansın</p>
+
+            <p>Bırakın alsın ne varsa<br>
+            Hayali benimle kalsın<br>
+            Söz geçmez olsun<br>
+            Gönlüm katlansın</p>
+
+            <p>Görmüyor musun çaresizliğimi<br>
+            Bu kadar mı<br>
+            Duymuyor musun sesimi<br>
+            Gönül lal mi</p>
+
+            <p>Kapatın şehrin ışıklarını<br>
+            Günahı düşümde kalsın<br>
+            Göz görmez olsun<br>
+            Gönül katlansın</p>
+
+            <p>Bırakın alsın ne varsa<br>
+            Hayali benimle kalsın<br>
+            Söz geçmez olsun<br>
+            Gönlüm katlansın</p>
+
+            <p>Her uzaklık çok zor<br>
+            İçimde kötü ihtimaller perisi<br>
+            Pul pul dökülmüş canım<br>
+            Yanar yanar da ısıtmaz beni</p>
+        </div>
+    </div>
+    <footer>❤️ Aşk Sonsuzdur ❤️</footer>
+    <div class="falling-hearts">
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💖</span>
+        <span>💘</span>
+        <span>💝</span>
+        <span>💟</span>
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💖</span>
+        <span>💘</span>
+        <span>💝</span>
+        <span>💟</span>
+        <span>🖤</span>
+        <span>👻</span>
+        <span>🦋</span> 
+    </div>
+    <script>
+        const quotes = [
+            "Kalbim hep sana ait. 💕",
+            "Bir gülüşünle hayat anlam bulur. 😊",
+            "Sonsuz aşkın adı sensin. ❤️",
+            "Seninle her an bir macera. 🥰",
+            "Aşkın en güzel hali sensin. 💓",
+            "Her gün seni daha çok seviyorum. 💖",
+            "Sen benim her şeyimsin. 💗"
+        ];
+        let index = 0;
+        setInterval(() => {
+            document.getElementById('dynamic-quote').textContent = quotes[index];
+            index = (index + 1) % quotes.length;
+        }, 10000);
+
+      
+        function createHeartOrButterfly() {
+            const element = document.createElement('span');
+            const symbols = ['❤️', '💕', '💖', '💘', '💝', '💟', '🦋']; 
+            element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.querySelector('.falling-hearts').appendChild(element);
+            setTimeout(() => {
+                element.remove();
+            }, 5000);
+        }
+        setInterval(createHeartOrButterfly, 500);
+    
+        const texts = [
+            "<h2>Mektubum</h2><p>Sevgilim, hayatımın en güzel anlarını seninle yaşıyorum. Seni çok seviyorum! ❤️</p>",
+            "<h2>Alıntı</h2><p>\"Aşk bir kelime değil, bir his... ❤️\"</p>",
+            "<h2>Şarkı Sözleri</h2><p>Her uzaklık çok zor<br>İçimde kötü ihtimaller perisi<br>Pul pul dökülmüş canım<br>Yanar yanar da ısıtmaz beni</p>",
+            "<h2>Şarkı Sözleri Devam</h2><p>Kapatın şehrin ışıklarını<br>Günahı düşümde kalsın<br>Göz görmez olsun<br>Gönül katlansın</p>"
+        ];
+
+        let indexText = 0;
+        function changeText() {
+            document.getElementById('text-section').innerHTML = texts[indexText];
+            indexText = (indexText + 
+            1) % texts.length;
+        }
+        setInterval(changeText, 15000);
+    </script>
+
+</body>
+</html>

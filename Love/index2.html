@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgilim İçin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(145deg, #ff1493, #ff69b4);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-3d {
+            font-size: 2.5rem;
+            color: #fff;
+            background: linear-gradient(145deg, #ff1493, #ff69b4);
+            padding: 20px;
+            border-radius: 15px;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6);
+            margin-bottom: 30px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .dynamic-content h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .dynamic-content p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .message-box {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            font-size: 1.3rem;
+            color: #ff69b4;
+            margin: 10px 0;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+
+        .message-box:hover {
+            background-color: #ff1493;
+            color: #fff;
+            box-shadow: 0 0 15px #fff;
+        }
+
+        .audio-controls button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .audio-controls button:hover {
+            background-color: #ff1493;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        /* Arka Plan Kalp */
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background-color: transparent;
+            background-image: url('https://cdn.pixabay.com/photo/2016/12/06/07/36/heart-1884129_960_720.png');
+            background-size: cover;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        /* Baloncuk Animasyonu */
+        .bubble {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            animation: bubble 6s infinite;
+        }
+
+        @keyframes bubble {
+            0% { bottom: -10px; opacity: 0; }
+            50% { opacity: 1; }
+            100% { bottom: 100%; opacity: 0; }
+        }
+
+        /* Baloncuk Rastgele Yerleşim */
+        .bubble:nth-child(1) { left: 10%; animation-duration: 6s; animation-delay: 1s; }
+        .bubble:nth-child(2) { left: 30%; animation-duration: 7s; animation-delay: 2s; }
+        .bubble:nth-child(3) { left: 50%; animation-duration: 8s; animation-delay: 3s; }
+        .bubble:nth-child(4) { left: 70%; animation-duration: 9s; animation-delay: 4s; }
+        .bubble:nth-child(5) { left: 90%; animation-duration: 10s; animation-delay: 5s; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h1 class="header-3d">❤️ Sadece Senin İçin ❤️</h1>
+        </header>
+
+        <div class="dynamic-content">
+            <h2>Bu sayfa seni düşündüğümde yazdığım özel sözlerle dolu.</h2>
+            <p>Her anımda seni daha çok seviyorum ve seni özel hissettirmek istiyorum.</p>
+
+            <!-- Mesaj Kutuları -->
+            <div class="message-box">💖 Seni seviyorum, hayatımın anlamı sensin!   💖</div>
+            <div class="message-box">💕 İyi ki hayatımdasın, seninle her şey daha güzel!    💕</div>
+            <div class="message-box">🥰 Her zaman yanında olacağım, her an seni düşüneceğim. 🥰</div>
+
+            <!-- Müzik Kontrolleri -->
+            <div class="audio-controls">
+                <button onclick="toggleMusic()">🎶 Müzik Aç/Kapat 🎶</button>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h1>❤️ Sadece Senin İçin ❤️</h1>
+            <p id="message">Hayatımı güzelleştirdiğin için sana minnettarım. Bu sayfa, sana olan sevgimi göstermek için yaptığım bir sürpriz.</p>
+            <a href="index.html" class="btn">Başlangıç Sayfasına Dön</a>
+            <a href="index3.html" class="btn">Sonraki Mesaj</a>
+
+        <footer>© 2024 Sevgilim için özel bir site.</footer>
+    </div>
+
+    <!-- Arka Plan Kalp -->
+    <div class="heart"></div>
+
+    <!-- Baloncuklar -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <script>
+        let musicPlaying = false;
+        let audio = new Audio("Filiz Kemal - Geliyor ( Deniz Bolat Remix ) Sarışın Yıldız Geliyo.mp3");
+        audio.loop = true;
+
+        function toggleMusic() {
+            if (musicPlaying) {
+                audio.pause();
+                musicPlaying = false;
+            } else {
+                audio.play();
+                musicPlaying = true;
+            }
+        }
+    </script>
+</body>
+</html>
+
